@@ -169,7 +169,7 @@ p {
 	HEADER
 *************************************** */
 .elgg-page-header {
-	background-color: #111;
+	background-color: #6d1a42;
 	border: 1px solid #999;
 	padding: 20px 20px;
 }
