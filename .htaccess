@@ -124,9 +124,10 @@ RewriteEngine on
 
 
 # HTTPS Redirect
-RewriteEngine On
-RewriteCond !{HTTPS} off
-RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTPS} off
+# First rewrite to HTTPS:
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# Now, rewrite any request to the wrong domain to use www.
 RewriteCond %{HTTP_HOST} !^www\.
 RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 #HTTPS Redirect END
