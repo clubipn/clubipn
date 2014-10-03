@@ -1,5 +1,5 @@
 <?php
-    //gatekeeper(); //temporal fix
+    gatekeeper();
 
     $num_messages = count_unread_notifications(25);
 

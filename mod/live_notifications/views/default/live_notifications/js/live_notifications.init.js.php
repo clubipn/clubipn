@@ -22,8 +22,9 @@ $(document).ready(function () {
         $('.elgg-icon-live_notifications').addClass("elgg-icon-live_notifications-selected");
         return false;   
     });
-<?php if(elgg_is_logged_in()): ?>
+
     //Interval update counter: 10 second(10000)
+   if(elgg.is_logged_in()){
    setInterval(function() {
         elgg.action('live_notifications/refresh_count', function(response) {
             var num = parseInt($("#count_unread_notifications").html());
@@ -41,7 +42,7 @@ $(document).ready(function () {
             }
         });
     }, 15000);
-<?php endif; ?>
+   }
     
     $(document).click(function(event) { 
         if($(event.target).parents().index($('#live_notifications')) == -1) {
