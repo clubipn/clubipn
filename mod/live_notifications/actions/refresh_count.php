@@ -6,5 +6,5 @@ if (elgg_is_logged_in()) {
 
     echo $num_messages;
 }else{
-    gatekeeper();
+   return;
 }
