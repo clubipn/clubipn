@@ -121,6 +121,16 @@ RewriteEngine on
 
 
 # In for backwards compatibility
+
+
+# HTTPS Redirect
+RewriteEngine On
+RewriteCond !{HTTPS} off
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+#HTTPS Redirect END
+
 RewriteRule ^pg\/([A-Za-z0-9\_\-]+)$ engine/handlers/page_handler.php?handler=$1&%{QUERY_STRING} [L]
 RewriteRule ^pg\/([A-Za-z0-9\_\-]+)\/(.*)$ engine/handlers/page_handler.php?handler=$1&page=$2&%{QUERY_STRING} [L]
 RewriteRule ^tag\/(.+)\/?$ engine/handlers/page_handler.php?handler=search&page=$1 [L]
