@@ -41,7 +41,7 @@ $(document).ready(function () {
                 $("#count_unread_notifications").hide();                
             }
         });
-    }, 15000);
+    }, 40000);
    }
     
     $(document).click(function(event) { 
