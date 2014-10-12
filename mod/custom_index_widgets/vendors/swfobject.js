@@ -5,6 +5,6 @@ var swfobject=function(){var D="undefined",r="object",S="Shockwave Flash",W="Sho
 
 $( document ).ready(function() {
     if($('#media2610')){
-        $('#media2610').html('<iframe src="//www.ustream.tv/embed/19084136?wmode=direct" style="border: 0 none transparent;" frameborder="no" width="480" height="302"></iframe><br /><a href="http://www.ustream.tv/" style="padding: 2px 0px 4px; width: 400px; background: #ffffff; display: block; color: #000000; font-weight: normal; font-size: 10px; text-decoration: underline; text-align: center;" target="_blank">Live streaming video by Ustream</a>');
+        $('#media2610').html('<iframe src="//www.ustream.tv/embed/19084136?wmode=direct" style="border: 0 none transparent;" frameborder="no" width="480" height="302"></iframe>');
     }
 });
