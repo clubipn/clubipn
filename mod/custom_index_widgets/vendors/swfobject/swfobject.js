@@ -8,3 +8,9 @@ $( document ).ready(function() {
         $('#media2610').html('<iframe src="//www.ustream.tv/embed/19084136?wmode=direct" style="border: 0 none transparent;" frameborder="no" width="480" height="302"></iframe>');
     }
 });
+
+$( document ).ready(function() {
+    if($('#media3926')){
+        $('#media3926').html('<iframe src="//www.ustream.tv/embed/19093169?wmode=direct" style="border: 0 none transparent;" frameborder="no" width="480" height="302"></iframe>');
+    }
+});
