@@ -11,6 +11,6 @@ $( document ).ready(function() {
 
 $( document ).ready(function() {
     if($('#media3926')){
-        $('#media3926').html('<iframe src="//www.ustream.tv/embed/19093169?wmode=direct" style="border: 0 none transparent;" frameborder="no" width="480" height="302"></iframe>');
+        $('#media3926').html('<iframe src="//www.ustream.tv/embed/19104849?wmode=direct" style="border: 0 none transparent;" frameborder="no" width="480" height="302"></iframe>');
     }
 });
