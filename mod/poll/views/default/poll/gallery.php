@@ -1,4 +1,5 @@
 <?php
+
 	/**
 	 * Elgg Poll plugin
 	 * @package Elggpoll
@@ -9,19 +10,29 @@
 	 * www.webgalli.com or www.m4medicine.com
 	 */
 	 
-	
+
 		$owner = $vars['entity']->getOwnerEntity();
 		$friendlytime = friendly_time($vars['entity']->time_created);
 		$responses = $vars['entity']->countAnnotations('vote');
-		//
+		
+		/**/
 		$icon = elgg_view(
-						"profile/icon", array(
+				"profile/icon", array(
 										'entity' => $owner,
-										'size' => 'tiny',
-									  		)
-						);
-		$info = "<a href=\"{$vars['entity']->getURL()}\">{$vars['entity']->question}</a><br>";
-		$info .= "{$responses} responses<br>";
-		$info .= "<p class=\"owner_timestamp\"><a href=\"{$owner->getURL()}\">{$owner->name}</a> {$friendlytime}</p>";
-		echo elgg_view_listing($icon,$info);//elgg_view_listing($icon,$info); elgg_echo($info);
+										'size' => 'small',
+									  )
+			);
+		
+		
+		$info = "<p>" . elgg_echo('poll') . ": <a href=\"{$vars['entity']->getURL()}\">{$vars['entity']->question}</a></p>";
+		$info .= "<p>{$responses} responses</p>";
+		$info .= "<p><a href=\"{$owner->getURL()}\">{$owner->name}</a> {$friendlytime}</p>";
+
+		//display
+		echo "<div class=\"poll_gallery\">";
+		echo "<div class=\"poll_gallery_icon\">" . $icon . "</div>";
+		echo "<div class=\"poll_gallery_content\">" . $info . "</div>";
+		echo "</div>";
+
+
 ?>

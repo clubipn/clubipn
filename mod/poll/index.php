@@ -10,31 +10,38 @@
 	 * www.webgalli.com or www.m4medicine.com
 	 */
 	 
-
-
+	 
 	// Load Elgg engine
 		require_once(dirname(dirname(dirname(__FILE__))) . "/engine/start.php");
-	
-// Get the current page's owner
+		
+	// Get the current page's owner
 		$page_owner = page_owner_entity();
 		if ($page_owner === false || is_null($page_owner)) {
 			$page_owner = $_SESSION['user'];
 			set_page_owner($_SESSION['guid']);
 		}
-			
-		$area2 = elgg_view_title(elgg_echo('poll:everyone'));
 
-		$polls = get_entities('object','poll',0,'time_created desc',50,0,false,0);
+	//set poll title
+		if($page_owner == $_SESSION['user']){
+			$area2 = elgg_view_title(elgg_echo('poll:your'));
+		}else{
+			$area1 = elgg_view_title($page_owner->username . "'s " . elgg_echo('poll'));
+		}
 		
-		$count = count($polls);
+	// Get a poll posts
+		$polls = $page_owner->getObjects('poll',50,0);
 		
-		set_context('search');
+		foreach($polls as $poll)
+		{
+			//$area2 .= elgg_echo($poll->question);
+			$area2 .= elgg_view("poll/listing", array('entity' => $poll));
+		}
+
 		
-		$area2 .= elgg_view_entity_list($polls,$count,0,10,false,false,true);
-		
-		$body = elgg_view_layout("two_column_left_sidebar", '', $area1 . $area2);
+	// Display them in the page
+        $body = elgg_view_layout("two_column_left_sidebar", '', $area2);
 		
 	// Display page
-		page_draw(elgg_echo('poll:everyone'),$body);
+		page_draw(sprintf(elgg_echo('poll:user'),$page_owner->name),$body);
 		
 ?>

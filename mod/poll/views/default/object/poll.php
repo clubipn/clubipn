@@ -1,124 +1,165 @@
 <?php
-/**
- * Elgg poll individual post view
- *
- * @uses $vars['entity'] Optionally, the poll post to view
- */
 
-if (isset($vars['entity'])) {
-	$full = $vars['full_view'];
-	$poll = $vars['entity'];
+	/**
+	 * Elgg Poll plugin
+	 * @package Elggpoll
+	 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU Public License version 2
+	 * @Original author John Mellberg
+	 * website http://www.syslogicinc.com
+	 * @Modified By Team Webgalli to work with ElggV1.5
+	 * www.webgalli.com or www.m4medicine.com
+	 */
+	 
 
-	$owner = $poll->getOwnerEntity();
-	$container = $poll->getContainerEntity();
-	$categories = elgg_view('output/categories', $vars);
+	if (isset($vars['entity'])) {
+			
+		if (get_context() == "search") {
+				
+			//display the correct layout depending on gallery or list view
+			if (get_input('search_viewtype') == "gallery") {
 
-	$owner_icon = elgg_view_entity_icon($owner, 'tiny');
-	$owner_link = elgg_view('output/url', array(
-				'href' => "poll/owner/$owner->username",
-				'text' => $owner->name,
-				'is_trusted' => true,
-	));
-	$author_text = elgg_echo('byline', array($owner_link));
-	$tags = elgg_view('output/tags', array('tags' => $poll->tags));
-	$date = elgg_view_friendly_time($poll->time_created);
+				//display the gallery view
+            	echo elgg_view("poll/gallery",$vars);
 
-	$allow_close_date = elgg_get_plugin_setting('allow_close_date','poll');
-	if (($allow_close_date == 'yes') && (isset($poll->close_date))) {
-		$date_day = gmdate('j', $poll->close_date);
-		$date_month = gmdate('m', $poll->close_date);
-		$date_year = gmdate('Y', $poll->close_date);
-		$friendly_time = $date_day . '. ' . elgg_echo("poll:month:$date_month") . ' ' . $date_year;
+			} else {
+				
+				echo elgg_view("poll/listing",$vars);
 
-		$today = date("Y/m/d");
-		$end_of_day_close_date = $poll->close_date + 86400; // input/date saves beginning of day and we want to include closing date day in poll
-		$deadline = date("Y", $end_of_day_close_date).'/'.date("m", $end_of_day_close_date).'/'.date("d", $end_of_day_close_date);
-		if ((strtotime($deadline)-strtotime($today)) <= 0) {
-			$poll_state = 'closed';
+			}
+
 		} else {
-			$poll_state = 'open';
-		}
-		$closing_date .= "<div class='poll_closing-date-{$poll_state}'><b>" . elgg_echo('poll:poll_closing_date', array($friendly_time)) . '</b></div>';
-	}
-
-	// TODO: support comments off
-	// The "on" status changes for comments, so best to check for !Off
-	if ($poll->comments_on != 'Off') {
-		$comments_count = $poll->countComments();
-		//only display if there are commments
-		if ($comments_count != 0) {
-			$text = elgg_echo("comments") . " ($comments_count)";
-			$comments_link = elgg_view('output/url', array(
-				'href' => $poll->getURL() . '#poll-comments',
-				'text' => $text,
-				'is_trusted' => true
-			));
-		} else {
-			$comments_link = '';
-		}
-	} else {
-		$comments_link = '';
-	}
-
-	// do not show the metadata and controls in widget view
-	if (elgg_in_context('widgets')) {
-		$metadata = '';
-	} else {
-		$metadata = elgg_view_menu('entity', array(
-					'entity' => $poll,
-					'handler' => 'poll',
-					'sort_by' => 'priority',
-					'class' => 'elgg-menu-hz'
-		));
-	}
-
-	if ($full) {
-		$subtitle = "$closing_date $author_text $date $comments_link $categories";
-		$params = array(
-			'entity' => $poll,
-			'title' => false,
-			'metadata' => $metadata,
-			'subtitle' => $subtitle,
-			'tags' => $tags
-		);
-		$params = $params + $vars;
-		$summary = elgg_view('object/elements/summary', $params);
-
-		echo elgg_view('object/elements/full', array(
-			'summary' => $summary,
-			'icon' => $owner_icon
-		));
-
-		$description = $poll->description;
-		if (!empty($description)) {
-			echo "<br>";
-			echo $description;
-			echo "<br>";
-		}
-
-		echo elgg_view('poll/body', $vars);
-
-	} else {
-		$responses = $poll->countAnnotations('vote');
-		if ($responses == 1) {
-			$noun = elgg_echo('poll:noun_response');
-		} else {
-			$noun = elgg_echo('poll:noun_responses');
-		}
-		$responses = "<div>" . $responses . " " . $noun . "</div>";
-
-		$subtitle = "$closing_date $responses $author_text $date $comments_link $categories";
-
-		// brief view
-		$params = array(
-			'entity' => $poll,
-			'metadata' => $metadata,
-			'subtitle' => $subtitle,
-			'tags' => $tags
-		);
-		$params = $params + $vars;
-		$list_body = elgg_view('object/elements/summary', $params);
+			
+	?>
+		<!-- patches by webgalli -->
+	<div class="contentWrapper singleview">
+		<div class="poll_edit_link">
+				<!-- display edit options if it is the poll post owner -->
+		<?php
+		if ($vars['entity']->canEdit()) {
+		?>
+			<a href="<?php echo $vars['url']; ?>mod/poll/edit.php?pollpost=<?php echo $vars['entity']->getGUID(); ?>"><?php echo elgg_echo("edit"); ?></a>
+			<?php
+					
+					echo elgg_view("output/confirmlink", array(
+									'href' => $vars['url'] . "action/poll/delete?pollpost=" . $vars['entity']->getGUID(),
+									'text' => elgg_echo('delete'),
+									'confirm' => elgg_echo('deleteconfirm'),
+									));
 	
-		echo elgg_view_image_block($owner_icon, $list_body);
+					// Allow the menu to be extended
+					echo elgg_view("editmenu",array('entity' => $vars['entity']));
+					
+				}
+			
+			?>
+		</div>
+	<div class="poll_post">
+		<h3><a href="<?php echo $url; ?>"><?php echo $vars['entity']->title; ?></a></h3>
+		<!-- display the user icon -->
+		<div class="poll_post_icon">
+		    <?php
+		        echo elgg_view("profile/icon",array('entity' => $owner, 'size' => 'tiny'));
+			?>
+	    </div>
+			<p class="strapline">
+				<?php echo sprintf(elgg_echo("poll:strapline"), date("F j, Y",$vars['entity']->time_created)); ?>
+				<?php echo elgg_echo('by'); ?> <a href="<?php echo $vars['url']; ?>pg/ad/<?php echo $vars['entity']->getOwnerEntity()->username; ?>"><?php echo $vars['entity']->getOwnerEntity()->name; ?></a> 
+				<!-- display the comments link -->
+				<?php
+			    //get the number of responses
+				$num_responses = $vars['entity']->countAnnotations('vote');
+				//get the number of comments
+				$num_comments = elgg_count_comments($vars['entity']);
+			    ?>
+			    <?php echo "(" . $num_responses . " " . sprintf(elgg_echo("Responses")) . ")"; ?> 
+			<a href="<?php echo $vars['entity']->getURL(); ?>"><?php echo sprintf(elgg_echo("comments")) . " (" . $num_comments . ")"; ?></a><BR>		
+			</p>
+			<!-- display tags -->
+				<?php
+	
+					$tags = elgg_view('output/tags', array('tags' => $vars['entity']->tags));
+					if (!empty($tags)) {
+						echo '<p class="tags">' . $tags . '</p>';
+					}
+				?>
+			</div></div>
+			<!-- patches by webgalli -->
+
+	<div class="poll_post">
+		<div class="poll_post_body">
+
+			<!-- display the actual poll post -->
+	<div class="contentWrapper">
+			<?php
+				
+				$isPgOwner = ($vars['entity']->getOwnerEntity()->guid == $vars['user']->guid);
+				$priorVote = checkForPreviousVote($vars['entity'], $vars['user']->guid);
+				
+		$alreadyVoted = 0;
+        if ( $priorVote !== false ) {
+          $alreadyVoted = 1;
+        }
+				
+				//if user has voted, show the results
+				if ( $alreadyVoted ) {
+          // show the user's vote
+					echo "<p><h2>" . elgg_echo('poll:voted') . "</h2></p>";
+				} else {
+					
+					//else show the voting form
+					echo elgg_view('poll/forms/vote', array('entity' => $vars['entity']));
+					
+				}
+			?>
+		
+		</div>
+		</div>
+		<div class="clearfloat"></div>
+			
+		
+    <!-- show results -->
+    <?php if ( ($alreadyVoted) || ($vars['entity']->canEdit()) ) { ?>
+		<!-- show results -->
+		<div class="contentWrapper">
+		<p align="center"><a onclick="toggleResults();" style="cursor:hand;"><?php echo elgg_echo('poll:results'); ?></a></p>
+		</div>
+		<div id="resultsDiv" class="poll_post_body" style="display:none;">
+			<?php echo elgg_view('poll/results',array('entity' => $vars['entity'])); ?>
+	</div>
+		
+	<?php
+		}
+	?>
+		
+		<div class="clearfloat"></div>
+						
+
+	</div>
+
+	<script type="text/javascript">
+		function toggleResults()
+		{
+			var resultsDiv = document.getElementById('resultsDiv');
+			
+			if (resultsDiv.style.display == 'none')
+			{
+				resultsDiv.style.display = 'block';
+			}
+			else 
+			{	
+				resultsDiv.style.display = 'none';
+			}
+		}		
+	</script>
+	
+<?php
+
+			// If we've been asked to display the full view
+			if (isset($vars['full']) && $vars['full'] == true) {
+				echo elgg_view_comments($vars['entity']);
+			}
+				
+		}
+
 	}
-}
+?>

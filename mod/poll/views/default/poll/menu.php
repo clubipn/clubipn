@@ -10,12 +10,9 @@
 	 * www.webgalli.com or www.m4medicine.com
 	 */
 	 
+	 
 ?>
 
-	<p>
-		<?php
-
-			echo elgg_echo("poll:notfound");
-		
-		?>
+	<p class="user_menu_poll">
+		<a href="<?php echo $vars['url']; ?>pg/poll/<?php echo $vars['entity']->username; ?>"><?php echo elgg_echo("poll"); ?></a>	
 	</p>

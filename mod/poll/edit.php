@@ -14,27 +14,30 @@
 
 	// Load Elgg engine
 		require_once(dirname(dirname(dirname(__FILE__))) . "/engine/start.php");
-	
-// Get the current page's owner
+		gatekeeper();
+		
+	// Get the current page's owner
 		$page_owner = page_owner_entity();
 		if ($page_owner === false || is_null($page_owner)) {
 			$page_owner = $_SESSION['user'];
 			set_page_owner($_SESSION['guid']);
 		}
+		
+	// Get the post, if it exists
+		$pollpost = (int) get_input('pollpost');
+		if ($post = get_entity($pollpost)) {
 			
-		$area2 = elgg_view_title(elgg_echo('poll:everyone'));
-
-		$polls = get_entities('object','poll',0,'time_created desc',50,0,false,0);
-		
-		$count = count($polls);
-		
-		set_context('search');
-		
-		$area2 .= elgg_view_entity_list($polls,$count,0,10,false,false,true);
-		
-		$body = elgg_view_layout("two_column_left_sidebar", '', $area1 . $area2);
+			if ($post->canEdit()) {
+				
+				$area2 = elgg_view_title(elgg_echo('poll:editpost'));
+				$area2 .= elgg_view("poll/forms/edit", array('entity' => $post));
+				$body = elgg_view_layout("two_column_left_sidebar", $area1, $area2);
+				
+			}
+			
+		}
 		
 	// Display page
-		page_draw(elgg_echo('poll:everyone'),$body);
+		page_draw(sprintf(elgg_echo('poll:editpost'),$post->title),$body);
 		
 ?>

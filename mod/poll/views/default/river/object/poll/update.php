@@ -5,9 +5,9 @@
 	$url = $object->getURL();
 	
 	$url = "<a href=\"{$performed_by->getURL()}\">{$performed_by->name}</a>";
-	$string = sprintf(elgg_echo("poll:river:created"),$url) . " ";
-	$string .= elgg_echo("poll:river:create") . " <a href=\"" . $object->getURL() . "\">" . $object->question . "</a>";
-	
+	$string = sprintf(elgg_echo("poll:river:updated"),$url) . " ";
+    $string .= elgg_echo("poll:river:update") . " <a href=\"" . $object->getURL() . "\">" . $object->question . "</a>";
+    	
 ?>
 
 <?php echo $string; ?>
