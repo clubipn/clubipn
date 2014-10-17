@@ -18,10 +18,10 @@ function polls_init() {
 		}
 		
 	// Extend system CSS with our own styles, which are defined in the polls/css view
-		extend_view('css','polls/css');
+		elgg_extend_view('css','polls/css');
 		
 	// Extend hover-over menu	
-		extend_view('profile/menu/links','polls/menu');
+		elgg_extend_view('profile/menu/links','polls/menu');
 		
 	// Register a page handler, so we can have nice URLs
 		register_page_handler('polls','polls_page_handler');
@@ -39,9 +39,9 @@ function polls_init() {
 		if (!$group_polls || $group_polls != 'no') {
 			$group_profile_display = get_plugin_setting('group_profile_display', 'polls');
 			if (!$group_profile_display || $group_profile_display == 'right') {
-				extend_view('groups/right_column', 'groups/grouppolls',1);
+				elgg_extend_view('groups/right_column', 'groups/grouppolls',1);
 			} else if ($group_profile_display == 'left') {
-				extend_view('groups/left_column', 'groups/grouppolls',1);
+				elgg_extend_view('groups/left_column', 'groups/grouppolls',1);
 			}
 		}
 	
