@@ -20,13 +20,17 @@
 		}
 		
 	//set the title
+    if(elgg_is_admin_logged_in()){
 		$area2 = elgg_view_title(elgg_echo('polls:addpost'));
+    }
 
 	// Get the form
 		$area2 .= elgg_view("polls/forms/edit");
 		
 	// Display page
+    if(elgg_is_admin_logged_in()){
 		page_draw(elgg_echo('polls:addpost'),elgg_view_layout("two_column_left_sidebar", $area1, $area2));
+    }
 
 		
 ?>

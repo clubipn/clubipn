@@ -70,13 +70,15 @@ function polls_pagesetup() {
 				add_submenu_item(elgg_echo('polls:your'),$CONFIG->wwwroot."pg/polls/list/" . $page_owner->username);
 				add_submenu_item(elgg_echo('polls:friends'),$CONFIG->wwwroot."pg/polls/friends/" . $page_owner->username);
 				add_submenu_item(elgg_echo('polls:everyone'),$CONFIG->wwwroot."pg/polls/all");
-				add_submenu_item(elgg_echo('polls:addpost'),$CONFIG->wwwroot."pg/polls/add/" . $page_owner->username);
+                if(elgg_is_admin_logged_in()){
+				    add_submenu_item(elgg_echo('polls:addpost'),$CONFIG->wwwroot."pg/polls/add/" . $page_owner->username);
+                }
 			} else if (page_owner()) {
 				if ($page_owner instanceof ElggUser) { // Sorry groups, this isn't for you.
 					add_submenu_item(sprintf(elgg_echo('polls:user'),$page_owner->name),$CONFIG->wwwroot."pg/polls/" . $page_owner->username);
 					add_submenu_item(sprintf(elgg_echo('polls:user:friends'),$page_owner->name),$CONFIG->wwwroot."pg/polls/" . $page_owner->username . "/friends/");
 				} else if ($page_owner instanceof ElggGroup) {
-					if (polls_can_add_to_group($page_owner)) {
+					if (polls_can_add_to_group($page_owner) && elgg_is_admin_logged_in()) {
 						add_submenu_item(elgg_echo('polls:addpost'),$CONFIG->wwwroot."pg/polls/add/" . $page_owner->username);
 					}
 					add_submenu_item(elgg_echo('polls:group_polls'), $CONFIG->wwwroot . "pg/polls/list/" . $page_owner->username);
