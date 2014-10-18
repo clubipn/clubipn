@@ -65,7 +65,7 @@ function polls_pagesetup() {
 	$page_owner = page_owner_entity();
 
 	//add submenu options
-		if (get_context() == "polls") {
+		if (elgg_get_context() == "polls") {
 			if ((page_owner() == $_SESSION['guid'] || !page_owner()) && isloggedin()) {
 				add_submenu_item(elgg_echo('polls:your'),$CONFIG->wwwroot."pg/polls/list/" . $page_owner->username);
 				add_submenu_item(elgg_echo('polls:friends'),$CONFIG->wwwroot."pg/polls/friends/" . $page_owner->username);

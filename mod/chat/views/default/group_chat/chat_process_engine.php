@@ -86,7 +86,7 @@ function updateChat(){
 			});
 	 }
 	 else {
-		 setTimeout(updateChat, 1500);
+		 setTimeout(updateChat,3000);
 	 }
 }
 
