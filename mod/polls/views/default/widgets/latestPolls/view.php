@@ -20,7 +20,7 @@
 	$owner_guid = $vars['entity']->owner_guid;
 	$owner = page_owner_entity();
 	
-	if($polls = get_entities('object','poll',0,'time_created desc',$limit,0,false,0)){
+	if($polls = elgg_get_entities('object','poll',0,'time_created desc',$limit,0,false,0)){
 		$polls_ = array();		
 		foreach($polls as $pollpost){
 			if($pollpost->owner_guid != $owner_guid){

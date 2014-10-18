@@ -28,9 +28,9 @@
 			
 		$area2 = elgg_view_title(elgg_echo('polls:everyone'));
 
-		$polls = get_entities('object','poll',0,'time_created desc',$limit,$offset,false,0);
+		$polls = elgg_get_entities('object','poll',0,'time_created desc',$limit,$offset,false,0);
 		
-		$count = get_entities('object','poll',0,'time_created desc',999,0,true);
+		$count = elgg_get_entities('object','poll',0,'time_created desc',999,0,true);
 		
 		
 		set_context('search');

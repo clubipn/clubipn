@@ -17,7 +17,7 @@ if (polls_activated_for_group($vars['entity'])) {
 $limit = 4;
 set_context("search");
 //$objects = list_entities_from_metadata("content_owner",page_owner(), "object","poll",0, 5, false,false,false);
-if($polls = get_entities('object','poll',0,'time_created desc',$limit,0,false,0,page_owner())){	
+if($polls = elgg_get_entities('object','poll',0,'time_created desc',$limit,0,false,0,page_owner())){
 	foreach($polls as $pollpost){
 		echo elgg_view("polls/widget", array('entity' => $pollpost));
 	}	

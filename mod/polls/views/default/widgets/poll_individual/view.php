@@ -9,7 +9,7 @@
  *
  */
 
-$polls = get_entities('object','poll',0,'',1,0,false,0,page_owner());
+$polls = elgg_get_entities('object','poll',0,'',1,0,false,0,page_owner());
 
 if(!empty($polls)){
   $body = elgg_view('polls/poll_widget',array('entity'=>$polls[0]));
