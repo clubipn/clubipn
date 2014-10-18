@@ -79,14 +79,14 @@ function updateChat(){
                         }
 						document.getElementById('chat-area').scrollTop = document.getElementById('chat-area').scrollHeight;
 				   }
-				  
+
 				   instanse = false;
 				   state = data.output.state;
 			   },
 			});
 	 }
 	 else {
-		 setTimeout(updateChat,3000);
+		 //setTimeout(updateChat,3000);
 	 }
 }
 
