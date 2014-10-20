@@ -81,9 +81,9 @@ h6 { font-size: 0.8em; }
 
 .elgg-heading-site, .elgg-heading-site:hover {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-	font-size: 5em;
+	font-size: 2em;
     float: left;
-    margin-top: 48px;
+    margin-top: 20px;
     margin-left: -8px;
 	color: #222;
 	text-shadow: 1px 1px 3px #fff;

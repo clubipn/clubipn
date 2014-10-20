@@ -224,7 +224,7 @@
 }
 .elgg-menu-site-default {
 	position: absolute;
-	top: 58px;
+	top: 88px;
 	right: 0;
 	height: 23px;
 }
