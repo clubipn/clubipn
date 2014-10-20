@@ -5,7 +5,7 @@ var swfobject=function(){var D="undefined",r="object",S="Shockwave Flash",W="Sho
 
 $( document ).ready(function() {
     if($('#media2610')){
-        $('#media2610').html('<iframe src="https://mixlr.com/radio-burros/embed" width="100%" height="180px" scrolling="no" frameborder="no" marginheight="0" marginwidth="0"></iframe><small><a href="http://mixlr.com/radio-burros" style="color:#1a1a1a;text-align:left; font-family:Helvetica, sans-serif; font-size:11px;">Radio Burros  is on Mixlr</a></small>');
+        $('#media2610').html('<iframe src="https://mixlr.com/radio-burros/embed" width="100%" height="180px" scrolling="no" frameborder="no" marginheight="0" marginwidth="0"></iframe><small><a href="http://mixlr.com/radio-burros" style="color:#1a1a1a;text-align:left; font-family:Helvetica, sans-serif; font-size:11px;" target="_blank">Radio Burros  is on Mixlr</a></small>');
     }
 
     if($('#media3926')){
