@@ -123,8 +123,8 @@
 	background-position: 0 -522px;
 }
 .elgg-icon-list {
-	width: 12px;
-	height: 12px;
+	width: 18px;
+	height: 18px;
 	background: transparent url(<?php echo elgg_get_site_url();?>mod/basic_light/graphics/icons/list.png) no-repeat;
 	background-position: 0 0;
     background-size: 100% auto;
@@ -157,8 +157,8 @@
 	background-position: 0 -702px;
 }
 .elgg-icon-push-pin-alt {
-	width: 12px;
-	height: 12px;
+	width: 18px;
+	height: 18px;
 	background: transparent url(<?php echo elgg_get_site_url();?>mod/basic_light/graphics/icons/bookmark.png) no-repeat;
 	background-position: 0 0;
     background-size: 100% auto;
@@ -191,11 +191,11 @@
 	background-position: 0 -882px;
 }
 .elgg-icon-rss {
-	width: 12px;
-	height: 12px;
+	width: 18x;
+	height: 18px;
 	background: transparent url(<?php echo elgg_get_site_url();?>mod/basic_light/graphics/icons/rss.png) no-repeat;
 	background-position: 0 0;
-    background-size_ 100% auto;
+    background-size: 100% auto;
 }
 .elgg-icon-search-focus {
 	background-position: 0 -918px;
@@ -252,8 +252,8 @@
 	background-position: 0 -1224px;
 }
 .elgg-icon-tag {
-	width: 12px;
-	height: 12px;
+	width: 18px;
+	height: 18px;
 	background: transparent url(<?php echo elgg_get_site_url();?>mod/basic_light/graphics/icons/tag.png) no-repeat;
 	background-position: 0 0;
     background-size: 100% auto;
