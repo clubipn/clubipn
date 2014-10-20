@@ -13,7 +13,7 @@ $(document).ready(function() {
     }
 
     if($('#media11475')){
-        $('#media11475').html('<p><a href="http://www.hellohelp.net/hellohelp/fm_userlogin.php?cust_id=1584&amp;cc=3569&amp;langid=3275&amp;referer=http://www.hellohelp.net/hellohelp/main.php?custid=1584&amp;dni=&amp;un=&amp;email=&amp;ccs=1" target="_blank" title="Chat de Informaci&oacute;n en l&iacute;nea" id="chat_img"><img src="https://www.ipn.club/file/download/11465" border="0" alt="image" width="298" height="169" style="vertical-align: middle; border: 0px;" /></a></p>');
+        $('#media11475').html('<p><a href="http://www.hellohelp.net/hellohelp/fm_userlogin.php?cust_id=1584&amp;cc=3569&amp;langid=3275&amp;referer=http://www.hellohelp.net/hellohelp/main.php?custid=1584&amp;dni=&amp;un=&amp;email=&amp;ccs=1" target="_blank" title="Chat de Informaci&oacute;n en l&iacute;nea" id="chat_img"><img src="https://www.ipn.club/file/download/11465" border="0" alt="image" width="298" height="169" style="vertical-align: middle; border: 0px;" /></a></p><p><a href="https://www.ipn.club/polls/list/administrador"><img src="https://www.ipn.club/mod/img/votaciones.jpg" border="0" alt="image" width="169" height="169" style="vertical-align: middle; border: 0px;" /></a></p>');
     }
 
     $('#chat_img').click(function(){
