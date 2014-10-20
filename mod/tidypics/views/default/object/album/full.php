@@ -51,8 +51,6 @@ if ($album->description) {
 
 $body .= $album->viewImages();
 
-$body .= elgg_view_comments($album);
-
 echo elgg_view('object/elements/full', array(
 	'entity' => $album,
 	'icon' => $owner_icon,

@@ -21,9 +21,7 @@ foreach ($guids as $key => $guid) {
 		if ($titles[$key]) {
 			$image->title = $titles[$key];
 		} else {
-                        $title = substr($image->originalfilename, 0, strrpos($image->originalfilename, '.'));
-                        // remove any possible bad characters from the title
-                        $image->title = preg_replace('/\W/', '', $title);
+			$image->title = substr($image->originalfilename, 0, strrpos($image->originalfilename, '.'));
 		}
 
 		// set description appropriately

@@ -46,5 +46,5 @@ if ($handle = opendir($base_dir)) {
 
 elgg_set_plugin_setting('version', $version, 'tidypics');
 
-system_message(elgg_echo('tidypics:upgrade:success'));
+system_message("Tidypics has been upgraded");
 forward(REFERER);

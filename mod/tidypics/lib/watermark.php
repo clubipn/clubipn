@@ -13,10 +13,10 @@
  * @return string
  */
 function tp_process_watermark_text($text, $owner) {
+	global $CONFIG;
+
 	$text = str_replace("%name%", $owner->name, $text);
-	$text = str_replace("%username%", $owner->username, $text);
-	$text = str_replace("%sitename%", elgg_get_config('sitename'), $text);
-	$text = str_replace("%siteurl%", elgg_get_site_url(), $text);
+	$text = str_replace("%sitename%", $CONFIG->sitename, $text);
 
 	return $text;
 }
@@ -46,7 +46,8 @@ function tp_get_watermark_filename($text, $owner) {
  * @param resource $image GD image resource
  */
 function tp_gd_watermark($image) {
-
+	global $CONFIG;
+	
 	$watermark_text = elgg_get_plugin_setting('watermark_text', 'tidypics');
 	if (!$watermark_text) {
 		return;
@@ -66,7 +67,7 @@ function tp_gd_watermark($image) {
 	$textcolor = imagecolorallocatealpha($image, 50, 50, 50, 60);
 
 	// font and location
-	$font = elgg_get_plugins_path() . "tidypics/fonts/LiberationSerif-Regular.ttf";
+	$font = $CONFIG->pluginspath . "tidypics/fonts/LiberationSerif-Regular.ttf";
 	$bbox = imagettfbbox(20, 0, $font, $watermark_text);
 
 	$text_width = $bbox[2] - $bbox[0];

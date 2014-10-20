@@ -5,17 +5,16 @@
 
 $plugin = $vars['plugin'];
 
-$checkboxes = array('tagging', 'view_count', 'uploader', 'exif', 'download_link' , 'slideshow');
+$checkboxes = array('tagging', 'view_count', 'uploader', 'exif', 'download_link');
 foreach ($checkboxes as $checkbox) {
 	echo '<div>';
-	echo '<label>';
+	$checked = $plugin->$checkbox ? 'checked' : false;
 	echo elgg_view('input/checkbox', array(
 		'name' => "params[$checkbox]",
 		'value' => true,
 		'checked' => (bool)$plugin->$checkbox,
 	));
 	echo ' ' . elgg_echo("tidypics:settings:$checkbox");
-	echo '</label>';
 	echo '</div>';
 }
 

@@ -27,7 +27,7 @@ if (!isset($vars['title'])) {
 	$title = $vars['title'];
 }
 
-$url = isset($vars['href']) ? $vars['href'] : $entity->getURL();
+$url = $entity->getURL();
 if (isset($vars['href'])) {
 	$url = $vars['href'];
 }

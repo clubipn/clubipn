@@ -1,6 +1,6 @@
 <?php
 /**
- * Group album module
+ * Group blog module
  */
 
 $group = $vars['entity'];
@@ -31,19 +31,14 @@ if (!$content) {
 	$content = '<p>' . elgg_echo('tidypics:none') . '</p>';
 }
 
-$new_link = '';
-if (elgg_is_logged_in()) {
-	if ($group->isMember(elgg_get_logged_in_user_entity())) {
-		$new_link = elgg_view('output/url', array(
-			'href' => "photos/add/$group->guid",
-			'text' => elgg_echo('photos:add'),
-			'is_trusted' => true,
-		));
-	}
-}
+$new_link = elgg_view('output/url', array(
+	'href' => "photos/add/$group->guid",
+	'text' => elgg_echo('photos:add'),
+	'is_trusted' => true,
+));
 
 echo elgg_view('groups/profile/module', array(
-	'title' => elgg_echo("tidypics:albums_mostrecent"),
+	'title' => elgg_echo('photos:group'),
 	'content' => $content,
 	'all_link' => $all_link,
 	'add_link' => $new_link,

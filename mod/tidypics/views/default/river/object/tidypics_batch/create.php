@@ -4,12 +4,7 @@
  *
  * @author Cash Costello
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License v2
- *
  */
-
-elgg_load_js('tidypics');
-elgg_load_js('lightbox');
-elgg_load_css('lightbox');
 
 $batch = $vars['item']->getObjectEntity();
 
@@ -42,45 +37,19 @@ $subject_link = elgg_view('output/url', array(
 	'is_trusted' => true,
 ));
 
-$attachments = '';
 if (count($images)) {
-	$preview_size = elgg_get_plugin_setting('river_thumbnails_size', 'tidypics');
-	if(!$preview_size) {
-		$preview_size = 'tiny';
-	}
 	$attachments = '<ul class="tidypics-river-list">';
 	foreach($images as $image) {
 		$attachments .= '<li class="tidypics-photo-item">';
-		$attachments .= elgg_view_entity_icon($image, $preview_size, array(
-			'href' => $image->getIconURL('master'),
-			'img_class' => 'tidypics-photo',
-			'link_class' => 'tidypics-lightbox',
-		));
+		$attachments .= elgg_view_entity_icon($image, 'tiny');
 		$attachments .= '</li>';
 	}
 	$attachments .= '</ul>';
 }
 
 if (count($images) == 1) {
-	// View the comments of the image
-	$vars['item']->object_guid = $images[0]->guid;
-	$responses = elgg_view('river/elements/responses', $vars);
-	if ($responses) {
-		$responses = "<div class=\"elgg-river-responses\">$responses</div>";
-	}
-	$image_link = elgg_view('output/url', array(
-		'href' => $images[0]->getURL(),
-		'text' => $images[0]->getTitle(),
-		'is_trusted' => true,
-	));
-	$summary = elgg_echo('image:river:created', array($subject_link, $image_link, $album_link));
+	$summary = elgg_echo('image:river:created', array($subject_link, $album_link));
 } else {
-	// View the comments of the album
-	$vars['item']->object_guid = $album->guid;
-	$responses = elgg_view('river/elements/responses', $vars);
-	if ($responses) {
-		$responses = "<div class=\"elgg-river-responses\">$responses</div>";
-	}
 	$summary = elgg_echo('image:river:created:multiple', array($subject_link, count($images), $album_link));
 }
 

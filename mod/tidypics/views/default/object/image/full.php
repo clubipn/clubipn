@@ -9,20 +9,20 @@
  */
 
 $image = $photo = $vars['entity'];
-$album = $image->getContainerEntity();
 
 $img = elgg_view_entity_icon($image, 'large', array(
 	'href' => $image->getIconURL('master'),
 	'img_class' => 'tidypics-photo',
 	'link_class' => 'tidypics-lightbox',
 ));
+elgg_load_js('lightbox');
+elgg_load_css('lightbox');
 
 $owner_link = elgg_view('output/url', array(
 	'href' => "photos/owner/" . $photo->getOwnerEntity()->username,
 	'text' => $photo->getOwnerEntity()->name,
 ));
 $author_text = elgg_echo('byline', array($owner_link));
-$date = elgg_view_friendly_time($image->time_created);
 
 $owner_icon = elgg_view_entity_icon($photo->getOwnerEntity(), 'tiny');
 
@@ -33,7 +33,7 @@ $metadata = elgg_view_menu('entity', array(
 	'class' => 'elgg-menu-hz',
 ));
 
-$subtitle = "$author_text $date";
+$subtitle = "$author_text $date $categories $comments_link";
 
 $params = array(
 	'entity' => $photo,
@@ -50,9 +50,7 @@ $summary = elgg_view_image_block($owner_icon, $list_body, $params);
 echo $summary;
 
 echo '<div class="tidypics-photo-wrapper center">';
-if ($album->getSize() > 1) {
-	echo elgg_view('object/image/navigation', $vars);
-}
+echo elgg_view('object/image/navigation', $vars);
 echo elgg_view('photos/tagging/help', $vars);
 echo elgg_view('photos/tagging/select', $vars);
 echo $img;

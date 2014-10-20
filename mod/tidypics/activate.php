@@ -1,7 +1,7 @@
 <?php
 /**
  * Activate Tidypics
- *
+ * 
  * @author Cash Costello
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU General Public License v2
  */
@@ -17,11 +17,6 @@ if (get_subtype_id('object', 'image')) {
 } else {
 	add_subtype('object', 'image', 'TidypicsImage');
 }
-if (get_subtype_id('object', 'tidypics_batch')) {
-	update_subtype('object', 'tidypics_batch', 'TidypicsBatch');
-} else {
-	add_subtype('object', 'tidypics_batch', 'TidypicsBatch');
-}
 
 // set default settings
 $plugin = elgg_get_plugin_from_id('tidypics');
@@ -33,20 +28,17 @@ $image_sizes['tiny_image_width'] = $image_sizes['tiny_image_height'] = 60;
 $image_sizes = serialize($image_sizes);
 
 $defaults = array(
-	'tagging' => false,
+	'tagging' => true,
 	'view_count' => true,
 	'uploader' => true,
-	'exif' => false,
+	'exif' => true,
 	'download_link' => true,
-	'slideshow' => false,
 
 	'maxfilesize' => 5,
 	'image_lib' => 'GD',
 
 	'img_river_view' => 'batch',
-	'album_river_view' => 'cover',
-	'river_comments_thumbnails' => 'none',
-	'river_thumbnails_size' => 'tiny',
+	'album_river_view' => 'set',
 
 	'image_sizes' => $image_sizes,
 

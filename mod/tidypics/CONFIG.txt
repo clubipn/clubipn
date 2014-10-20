@@ -1,8 +1,10 @@
+
 Troubleshooting
 =================
 If you are experiencing errors, please check your server error log. Tidypics
 writes warnings for most upload related problems. You will see something
 along these lines: "Tidypics warning: user exceeded post limit on image upload"
+
 
 GD PHP Image Library
 =====================
@@ -19,7 +21,7 @@ settings will tell you whether it is installed.
 
 ImageMagick command line tools
 ===============================
-This requires that the PHP function exec() is available which is often disabled
+This requires that the PHP function exec() is available which is often disbaled
 for security reasons. You can find ImageMagick on your server by running "which convert".
 
 Memory Available to PHP
