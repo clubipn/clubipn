@@ -7,17 +7,13 @@ $( document ).ready(function() {
     if($('#media2610')){
         $('#media2610').html('<iframe src="//www.ustream.tv/embed/19084136?wmode=direct" style="border: 0 none transparent;" frameborder="no" width="480" height="302"></iframe>');
     }
-});
 
-$( document ).ready(function() {
     if($('#media3926')){
         $('#media3926').html('<iframe src="//www.ustream.tv/embed/19104849?wmode=direct" style="border: 0 none transparent;" frameborder="no" width="480" height="302"></iframe>');
     }
-});
 
-$( document ).ready(function() {
-    if($('#media11460')){
-        $('#media11460').html('<iframe src="//www.hellohelp.net/hellohelp/fm_userlogin.php?cust_id=1584&cc=3569&langid=3275&referer=http://www.hellohelp.net/hellohelp/main.php?custid=1584&dni=&un=&email=&ccs=1" style="border: 0 none transparent;" frameborder="no" width="480" height="302"></iframe>');
+    if($('#media11475')){
+        $('#media11475').html('<p><a href="http://www.hellohelp.net/hellohelp/fm_userlogin.php?cust_id=1584&amp;cc=3569&amp;langid=3275&amp;referer=http://www.hellohelp.net/hellohelp/main.php?custid=1584&amp;dni=&amp;un=&amp;email=&amp;ccs=1" target="_blank" title="Chat de Informaci&oacute;n en l&iacute;nea" onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=550,height=480');return false;"><img src="https://www.ipn.club/file/download/11465" border="0" alt="image" width="298" height="169" style="vertical-align: middle; border: 0px;" /></a></p>');
     }
 });
 
