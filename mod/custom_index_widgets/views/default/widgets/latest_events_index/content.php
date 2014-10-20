@@ -22,7 +22,7 @@
 	if (!isset($mode))
 	    $mode = "month";
 	
-	$site_categories = elgg_get_site_entity()->categories;
+	$site_categories = $vars['config']->site->categories;
 	$widget_categorie = $vars['entity']->widget_categorie;
 	$widget_context_mode = $vars['entity']->widget_context_mode;
 	if (!isset($widget_context_mode))

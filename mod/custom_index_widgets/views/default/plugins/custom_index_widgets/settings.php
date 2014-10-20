@@ -27,7 +27,6 @@
           	?>
          </td>
       </tr>
-	  <!--
 	  <tr>
 	  	<td style="width:50%"><?php echo elgg_echo("custom_index_widgets:login_style"); ?></td>
   	     <td>
@@ -42,7 +41,6 @@
           	?>
          </td>
 	  </tr>
-	  -->
 	  <tr>
 	  	<td style="width:50%"><?php echo elgg_echo("custom_index_widgets:showdashboard"); ?></td>
   	     <td>
@@ -53,30 +51,6 @@
           				'no' => elgg_echo('custom_index_widgets:showdashboard_no'),
         			),
           			'value' => $vars["entity"]->ciw_showdashboard
-          		));
-          	?>
-         </td>
-	  </tr>
-	  <tr>
-	  	<td style="width:50%"><?php echo elgg_echo("custom_index_widgets:responsive"); ?></td>
-  	     <td>
-  	         <?php	echo elgg_view('input/dropdown', array(
-          			'name' => 'params[ciw_responsive]',
-          			'options_values' => array(
-          				'yes' => elgg_echo('custom_index_widgets:responsive_yes'),
-          				'no' => elgg_echo('custom_index_widgets:responsive_no')
-        			),
-          			'value' => $vars["entity"]->ciw_responsive
-          		));
-          	?>
-         </td>
-	  </tr>
-	  <tr>
-	  	<td style="width:50%"><?php echo elgg_echo("custom_index_widgets:bodywidth"); ?></td>
-  	     <td>
-  	         <?php	echo elgg_view('input/text', array(
-          			'name' => 'params[ciw_bodywidth]',
-          			'value' => $vars["entity"]->ciw_bodywidth,
           		));
           	?>
          </td>
