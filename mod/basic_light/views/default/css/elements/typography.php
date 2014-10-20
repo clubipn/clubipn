@@ -85,7 +85,7 @@ h6 { font-size: 0.8em; }
     float: left;
     margin-top: 20px;
     margin-left: -8px;
-	color: #222;
+	color: #EBEFF1;
 	text-shadow: 1px 1px 3px #fff;
 	text-decoration: none;
 }

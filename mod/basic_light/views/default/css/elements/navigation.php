@@ -233,7 +233,7 @@
 	margin-right: 1px;
 }
 .elgg-menu-site-default > li > a {
-	color: #222;
+	color: #EBEFF1;
 }
 .elgg-menu-site > li > ul {
 	display: none;
