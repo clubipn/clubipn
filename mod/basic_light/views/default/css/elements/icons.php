@@ -249,10 +249,11 @@
 	background-position: 0 -1224px;
 }
 .elgg-icon-tag {
-	width: 24px;
-	height: 24px;
+	width: 12px;
+	height: 12px;
 	background: transparent url(<?php echo elgg_get_site_url();?>mod/basic_light/graphics/icons/tag.png) no-repeat;
 	background-position: 0 0;
+    background-size: 100% auto;
 }
 .elgg-sidebar .elgg-icon-tag,
 .elgg-sidebar-alt .elgg-icon-tag {
