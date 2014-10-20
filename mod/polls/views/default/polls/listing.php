@@ -30,6 +30,7 @@
 		$info .= "</p>";
 		$info .= "<p>{$responses} ".elgg_echo('polls:votes')."</p>";
 		$info .= "<p class=\"owner_timestamp\"><a href=\"{$owner->getURL()}\">{$owner->name}</a> {$friendlytime}</p>";
+        $info .= "<a href=\"{$vars['entity']->getURL()}\" class=\"elgg-button elgg-button-action\">Votar</a>";
 		echo elgg_view_listing($icon,$info);
 
 ?>
