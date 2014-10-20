@@ -215,7 +215,7 @@
 }
 .elgg-menu-site > li > a {
     font-size: 130%;
-    text-shadow: 1px 1px 1px #FFF;
+    text-shadow: 0px 0px 1px #FFF;
 	padding: 0 0 0 26px;
 	height: auto;
 }
@@ -244,7 +244,7 @@
 }
 .elgg-menu-site-default > .elgg-state-selected > a,
 .elgg-menu-site-default > li:hover > a {
-	color: #666;
+    text-shadow: 0px 6px 7px rgba(255, 255, 255, 1);
 }
 .elgg-menu-site-more {
 	position: absolute;
