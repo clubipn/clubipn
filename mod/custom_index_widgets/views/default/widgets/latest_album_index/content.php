@@ -1,6 +1,6 @@
 <div class="contentWrapper"> 
 <?php
-
+    if(false){
 	$num_items = $vars['entity']->num_items;
   	if (!isset($num_items)) $num_items = 10;
   
@@ -55,6 +55,8 @@
 	echo '<div class="icon_latest">';
 	echo $widgetdatas;
 	echo '</div>';
-
+    }else{
+        return true;
+    }
 ?>
 </div>
