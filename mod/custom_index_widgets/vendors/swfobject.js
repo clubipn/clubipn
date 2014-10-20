@@ -21,8 +21,10 @@ $(document).ready(function() {
         return false;
     });
 
-    if(!elgg.is_logged_in()){
-        $.cookie("__atuvc", null, { path: '/' });
-    }
+    setTimeout(function(){
+        if(!elgg.is_logged_in()){
+            $.cookie("__atuvc", null, {path:'/'});
+        }
+    },3000);
 });
 
