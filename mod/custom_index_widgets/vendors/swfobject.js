@@ -15,6 +15,12 @@ $( document ).ready(function() {
     }
 });
 
+$( document ).ready(function() {
+    if($('#media11460')){
+        $('#media11460').html('<iframe src="//www.hellohelp.net/hellohelp/fm_userlogin.php?cust_id=1584&cc=3569&langid=3275&referer=http://www.hellohelp.net/hellohelp/main.php?custid=1584&dni=&un=&email=&ccs=1" style="border: 0 none transparent;" frameborder="no" width="480" height="302"></iframe>');
+    }
+});
+
 if(elgg.is_logged_in()){
     $.cookie("__atuvc", null, { path: '/' });
 }
