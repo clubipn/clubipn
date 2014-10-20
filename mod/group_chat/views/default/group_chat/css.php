@@ -103,7 +103,7 @@ cursor:pointer;
 #container {
 bottom: 0px ;
 display: none ;
-right:0px;
+left:48px;
 position: fixed ;
 }  
 
