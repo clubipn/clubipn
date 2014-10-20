@@ -31,7 +31,7 @@ if($guid > 0){
           $("#sendie").keydown(function(a){var b=a.which;if(b>=33){var c=$(this).attr("maxlength");var d=this.value.length;if(d>=c){a.preventDefault()}}});$("#chat-area li").hover(function(){$(".chatTime").hide();$(this).children(".chatTime").show()});$("#chat-area li").mouseover(function(){$(".chatTime").hide();$(this).children(".chatTime").show()});$("#chat-area li").click(function(){$(".chatTime").hide();$(this).children(".chatTime").show()});$("#sendie").keyup(function(a){if(a.keyCode==13){var b=$(this).val();var c=$(this).attr("maxlength");var d=b.length;if(d<=c+1){sendChat(b,name,profilePic);$(this).val("")}else{$(this).val(b.substring(0,c))}}})
              <?php } ?>
 			 updateChat();
-             setInterval('updateChat()', 100);
+             setInterval('updateChat()', 1000);
 			
 		<?php if($guid <=0 ){ ?>
 		$('#sendie').attr('disabled','disabled');
