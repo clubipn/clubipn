@@ -20,8 +20,9 @@ $( document ).ready(function() {
         window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=550,height=480');
         return false;
     });
+
+    if(!elgg.is_logged_in()){
+        $.cookie("__atuvc", null, { path: '/' });
+    }
 });
 
-if(elgg.is_logged_in()){
-    $.cookie("__atuvc", null, { path: '/' });
-}
