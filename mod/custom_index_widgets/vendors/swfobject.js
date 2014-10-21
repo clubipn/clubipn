@@ -16,6 +16,10 @@ $(document).ready(function() {
         $('#media11475').html('<a href="http://www.hellohelp.net/hellohelp/fm_userlogin.php?cust_id=1584&amp;cc=3569&amp;langid=3275&amp;referer=http://www.hellohelp.net/hellohelp/main.php?custid=1584&amp;dni=&amp;un=&amp;email=&amp;ccs=1" target="_blank" title="Chat de Informaci&oacute;n en l&iacute;nea" id="chat_img"><img src="https://www.ipn.club/file/download/11465" border="0" alt="image" width="298" height="169" style="vertical-align: middle; border: 0px;" /></a><a href="https://www.ipn.club/polls/list/administrador" title="Participa en las votaciones"><img src="https://www.ipn.club/mod/img/votaciones.jpg" border="0" alt="image" width="169" height="169" style="vertical-align: middle; border: 0px;" /></a>');
     }
 
+    if($('#media12946')){
+        $('#media12946').html('<iframe src="http://new.livestream.com/accounts/10468533/events/3486007/player?width=560&height=315&autoPlay=true&mute=false" width="560" height="315" frameborder="0" scrolling="no"> </iframe>');
+    }
+
     $('#chat_img').click(function(){
         window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=550,height=480');
         return false;
