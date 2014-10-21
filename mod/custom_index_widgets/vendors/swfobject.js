@@ -17,7 +17,7 @@ $(document).ready(function() {
     }
 
     if($('#media12946')){
-        $('#media12946').html('<iframe src="http://new.livestream.com/accounts/10468533/events/3486007/player?width=560&height=315&autoPlay=true&mute=false" width="560" height="315" frameborder="0" scrolling="no"> </iframe>');
+        $('#media12946').html('<iframe src="https://new.livestream.com/accounts/10468533/events/3486007/player?width=560&height=315&autoPlay=true&mute=false" width="560" height="315" frameborder="0" scrolling="no"> </iframe>');
     }
 
     $('#chat_img').click(function(){
