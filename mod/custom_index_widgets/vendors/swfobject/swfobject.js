@@ -9,7 +9,7 @@ $(document).ready(function() {
     }
 
     if($('#media3926')){
-        $('#media3926').html('<iframe src="//www.ustream.tv/embed/19104849?wmode=direct" style="border: 0 none transparent;" frameborder="no" width="480" height="302"></iframe><br/><p>Simulacro para la mesa de diálogo con los candidatos filtrados.</p><br/><p>Se cuenta con la presencia de alumnos de la comunidad politécnica, docentes y candidatos.</p>');
+        $('#media3926').html('<iframe src="//www.ustream.tv/embed/19104849?wmode=direct" style="border: 0 none transparent;" frameborder="no" width="480" height="302"></iframe><br/><p>Transmisión del proceso de selección que se lleva a cabo para elegir a los integrantes de la mesa de diálogo.</p><br/><p>Los candidatos filtrados que han sido elegidos por votación de todas las escuelas pondrán a prueba su capacidad de negociación y diálogo con apoyo de docentes de diferentes escuelas del IPN.</p><br/><p>Los temas que se tratarán en este proceso de selección son de interés general y en casos con carácter ficticio sólo para probar la capacidad de los candidatos</p>');
     }
 
     if($('#media11475')){
