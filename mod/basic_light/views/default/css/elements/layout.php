@@ -56,8 +56,8 @@
 .elgg-page-header {
 	position: relative;
     border-bottom: 1px solid #BBB;
-    background: url(<?php echo $vars['url']; ?>mod/basic_light/graphics/bg_header.png) no-repeat left top;
-    background-size: 100% auto;
+    background: url(<?php echo $vars['url']; ?>mod/basic_light/graphics/bg_header.png) no-repeat left;
+    background-size: auto auto;
 }
 .elgg-page-header > .elgg-inner {
 	position: relative;
