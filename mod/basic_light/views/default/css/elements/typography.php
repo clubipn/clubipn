@@ -88,6 +88,7 @@ h6 { font-size: 0.8em; }
 	color: #EBEFF1;
 	text-shadow: 1px 1px 3px #fff;
 	text-decoration: none;
+    display: none;
 }
 .elgg-heading-main {
 	line-height: 1.8em;
