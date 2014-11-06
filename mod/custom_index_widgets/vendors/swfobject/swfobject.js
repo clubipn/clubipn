@@ -13,11 +13,11 @@ $(document).ready(function() {
     }
 
     if($('#media11475')){
-        $('#media11475').html('<a href="http://www.hellohelp.net/hellohelp/fm_userlogin.php?cust_id=1584&amp;cc=3569&amp;langid=3275&amp;referer=http://www.hellohelp.net/hellohelp/main.php?custid=1584&amp;dni=&amp;un=&amp;email=&amp;ccs=1" target="_blank" title="Chat de Informaci&oacute;n en l&iacute;nea" id="chat_img"><img src="https://www.ipn.club/file/download/11465" border="0" alt="image" width="298" height="169" style="vertical-align: middle; border: 0px;" /></a><a href="https://www.ipn.club/polls/list/administrador" title="Participa en las votaciones"><img src="https://www.ipn.club/mod/img/votaciones.jpg" border="0" alt="image" width="169" height="169" style="vertical-align: middle; border: 0px;" /></a>');
+        $('#media11475').html('<a href="https://www.ipn.club/polls/list/administrador" title="Participa en las votaciones"><img src="https://www.ipn.club/mod/img/votaciones.jpg" border="0" alt="image" width="169" height="169" style="vertical-align: middle; border: 0px;" /></a>');
     }
 
     if($('#media12946')){
-        $('#media12946').html('<iframe width="560" height="315" src="//www.youtube.com/embed/F5ARIQskJkI" frameborder="0" allowfullscreen></iframe>');
+        $('#media12946').html('<iframe width="508" height="309" src="http://www.oncetvmexicolive.tv/microtx/full.php" frameborder="0"></iframe>');
     }
 
     $('#chat_img').click(function(){

@@ -17,7 +17,7 @@ $(document).ready(function() {
     }
 
     if($('#media12946')){
-        $('#media12946').html('<iframe width="560" height="315" src="//www.youtube.com/embed/F5ARIQskJkI" frameborder="0" allowfullscreen></iframe>');
+        $('#media12946').html('<iframe width="508" height="309" src="http://www.oncetvmexicolive.tv/microtx/full.php" frameborder="0"></iframe>');
     }
 
     $('#chat_img').click(function(){
