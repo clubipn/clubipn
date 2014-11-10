@@ -20,6 +20,10 @@ $(document).ready(function() {
         $('#media12946').html('<iframe src="http://198.27.74.221/microtx/full.php"></iframe>');
     }
 
+    if('#media21638'){
+        $('#media21638').html('<iframe src="https://docs.google.com/document/d/1cXuuwIf5cGrLGUzj2TPLr9FYgukrFmM_LK763v7vGHI/edit?usp=sharing">');
+    }
+
     $('#chat_img').click(function(){
         window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=550,height=480');
         return false;

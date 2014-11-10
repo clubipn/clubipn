@@ -17,7 +17,11 @@ $(document).ready(function() {
     }
 
     if($('#media12946')){
-        $('#media12946').html('<iframe width="508" height="309" src="http://198.27.74.221/microtx/full.php" frameborder="0"></iframe>');
+        $('#media12946').html('');
+    }
+
+    if('#media21638'){
+        $('#media21638').html('<iframe src="https://docs.google.com/document/d/1cXuuwIf5cGrLGUzj2TPLr9FYgukrFmM_LK763v7vGHI/edit?usp=sharing">');
     }
 
     $('#chat_img').click(function(){
