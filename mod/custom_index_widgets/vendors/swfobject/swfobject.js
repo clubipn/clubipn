@@ -21,7 +21,7 @@ $(document).ready(function() {
     }
 
     if('#media21638'){
-        $('#media21638').html('<iframe src="https://docs.google.com/document/d/1cXuuwIf5cGrLGUzj2TPLr9FYgukrFmM_LK763v7vGHI/edit?usp=sharing">');
+        $('#media21638').html('<iframe src="https://docs.google.com/document/d/1cXuuwIf5cGrLGUzj2TPLr9FYgukrFmM_LK763v7vGHI/edit?usp=sharing" frameborder="no" width="940" height="1366">');
     }
 
     $('#chat_img').click(function(){
