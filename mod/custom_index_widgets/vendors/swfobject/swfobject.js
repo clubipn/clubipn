@@ -44,6 +44,10 @@ $(document).ready(function() {
         $('#media25567').html('<iframe src="https://docs.google.com/document/d/1lNcbx55IJzrWAf2LHhMawsUcl-PRQu-94HcfMKlDRC8/pub?embedded=true" frameborder="no" width="900" height="700"></iframe>');
     }
 
+    if('#media25620'){
+        $('#media25620').html('<iframe width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/179041461&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>');
+    }
+
     setTimeout(function(){
         if(!elgg.is_logged_in()){
             $.cookie("__atuvc", null, {path:'/'});
