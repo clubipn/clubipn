@@ -13,35 +13,35 @@ $(document).ready(function() {
     }
 
     if('#media25557'){
-        $('#media25557').html('<iframe src="https://docs.google.com/document/d/1SloyhnZzO3gRZnjrbhV4Qchj4Ny-iE91Hvk5mHAVlYo/pub?embedded=true" frameborder="no" width="980" height="700"></iframe>');
+        $('#media25557').html('<iframe src="https://docs.google.com/document/d/1SloyhnZzO3gRZnjrbhV4Qchj4Ny-iE91Hvk5mHAVlYo/pub?embedded=true" frameborder="no" width="900" height="700"></iframe>');
     }
 
     if('#media25561'){
-        $('#media25561').html('<iframe src="https://docs.google.com/document/d/1vgx8Xt5Urxffur4dz9x--lSaksrD89Qwh8FRx3d9O0Q/pub?embedded=true" frameborder="no" width="980" height="700"></iframe>');
+        $('#media25561').html('<iframe src="https://docs.google.com/document/d/1vgx8Xt5Urxffur4dz9x--lSaksrD89Qwh8FRx3d9O0Q/pub?embedded=true" frameborder="no" width="900" height="700"></iframe>');
     }
 
     if('#media25562'){
-        $('#media25562').html('<iframe src="https://docs.google.com/document/d/1JsqvIA7D7ZMne5jNyvsHTCkv30F031BqjfNlRlsSd54/pub?embedded=true" frameborder="no" width="980" height="700"></iframe>');
+        $('#media25562').html('<iframe src="https://docs.google.com/document/d/1JsqvIA7D7ZMne5jNyvsHTCkv30F031BqjfNlRlsSd54/pub?embedded=true" frameborder="no" width="900" height="700"></iframe>');
     }
 
     if('#media25563'){
-        $('#media25563').html('<iframe src="https://docs.google.com/document/d/1UXhlSEo56n2PzvMVfTFEynC_9v5GcRRHkeuA4zMApIA/pub?embedded=true" frameborder="no" width="980" height="700"></iframe>');
+        $('#media25563').html('<iframe src="https://docs.google.com/document/d/1UXhlSEo56n2PzvMVfTFEynC_9v5GcRRHkeuA4zMApIA/pub?embedded=true" frameborder="no" width="900" height="700"></iframe>');
     }
 
     if('#media25564'){
-        $('#media25564').html('<iframe src="https://docs.google.com/document/d/1atvb2DecfncFOYaF1B9KvuEbPsqmC_h9QKRlU9pG7_U/pub?embedded=true" frameborder="no" width="980" height="700"></iframe>');
+        $('#media25564').html('<iframe src="https://docs.google.com/document/d/1atvb2DecfncFOYaF1B9KvuEbPsqmC_h9QKRlU9pG7_U/pub?embedded=true" frameborder="no" width="900" height="700"></iframe>');
     }
 
     if('#media25565'){
-        $('#media25565').html('<iframe src="https://docs.google.com/document/d/1aR4sEIqPGBWxwEMfoBAugYCADlK8z9W31tYwniQsUq4/pub?embedded=true" frameborder="no" width="980" height="700"></iframe>');
+        $('#media25565').html('<iframe src="https://docs.google.com/document/d/1aR4sEIqPGBWxwEMfoBAugYCADlK8z9W31tYwniQsUq4/pub?embedded=true" frameborder="no" width="900" height="700"></iframe>');
     }
 
     if('#media25566'){
-        $('#media25566').html('<iframe src="https://docs.google.com/document/d/1xcIWX30-4tZ-0iKeJc75YfT07nKlaQf85hrwdv3ZXXA/pub?embedded=true" frameborder="no" width="980" height="700"></iframe>');
+        $('#media25566').html('<iframe src="https://docs.google.com/document/d/1xcIWX30-4tZ-0iKeJc75YfT07nKlaQf85hrwdv3ZXXA/pub?embedded=true" frameborder="no" width="900" height="700"></iframe>');
     }
 
     if('#media25567'){
-        $('#media25567').html('<iframe src="https://docs.google.com/document/d/1lNcbx55IJzrWAf2LHhMawsUcl-PRQu-94HcfMKlDRC8/pub?embedded=true" frameborder="no" width="980" height="700"></iframe>');
+        $('#media25567').html('<iframe src="https://docs.google.com/document/d/1lNcbx55IJzrWAf2LHhMawsUcl-PRQu-94HcfMKlDRC8/pub?embedded=true" frameborder="no" width="900" height="700"></iframe>');
     }
 
     setTimeout(function(){
