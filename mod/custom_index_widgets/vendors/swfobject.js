@@ -12,22 +12,37 @@ $(document).ready(function() {
         $('#media3926').html('<iframe src="//www.ustream.tv/embed/19104849?wmode=direct" style="border: 0 none transparent;" frameborder="no" width="480" height="302"></iframe>');
     }
 
-    if($('#media11475')){
-        $('#media11475').html('<a href="http://www.hellohelp.net/hellohelp/fm_userlogin.php?cust_id=1584&amp;cc=3569&amp;langid=3275&amp;referer=http://www.hellohelp.net/hellohelp/main.php?custid=1584&amp;dni=&amp;un=&amp;email=&amp;ccs=1" target="_blank" title="Chat de Informaci&oacute;n en l&iacute;nea" id="chat_img"><img src="https://www.ipn.club/file/download/11465" border="0" alt="image" width="298" height="169" style="vertical-align: middle; border: 0px;" /></a><a href="https://www.ipn.club/polls/list/administrador" title="Participa en las votaciones"><img src="https://www.ipn.club/mod/img/votaciones.jpg" border="0" alt="image" width="169" height="169" style="vertical-align: middle; border: 0px;" /></a>');
+    if('#media25557'){
+        $('#media25557').html('<iframe src="https://docs.google.com/document/d/1SloyhnZzO3gRZnjrbhV4Qchj4Ny-iE91Hvk5mHAVlYo/pub?embedded=true" frameborder="no" width="980" height="700"></iframe>');
     }
 
-    if($('#media12946')){
-        $('#media12946').html('<iframe src="http://198.27.74.221/microtx/full.php"></iframe>');
+    if('#media25561'){
+        $('#media25561').html('<iframe src="https://docs.google.com/document/d/1vgx8Xt5Urxffur4dz9x--lSaksrD89Qwh8FRx3d9O0Q/pub?embedded=true" frameborder="no" width="980" height="700"></iframe>');
     }
 
-    if('#media21638'){
-        $('#media21638').html('<iframe src="https://docs.google.com/document/d/1cXuuwIf5cGrLGUzj2TPLr9FYgukrFmM_LK763v7vGHI/edit?usp=sharing" frameborder="no" width="940" height="1366">');
+    if('#media25562'){
+        $('#media25562').html('<iframe src="https://docs.google.com/document/d/1JsqvIA7D7ZMne5jNyvsHTCkv30F031BqjfNlRlsSd54/pub?embedded=true" frameborder="no" width="980" height="700"></iframe>');
     }
 
-    $('#chat_img').click(function(){
-        window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=no,width=550,height=480');
-        return false;
-    });
+    if('#media25563'){
+        $('#media25563').html('<iframe src="https://docs.google.com/document/d/1UXhlSEo56n2PzvMVfTFEynC_9v5GcRRHkeuA4zMApIA/pub?embedded=true" frameborder="no" width="980" height="700"></iframe>');
+    }
+
+    if('#media25564'){
+        $('#media25564').html('<iframe src="https://docs.google.com/document/d/1atvb2DecfncFOYaF1B9KvuEbPsqmC_h9QKRlU9pG7_U/pub?embedded=true" frameborder="no" width="980" height="700"></iframe>');
+    }
+
+    if('#media25565'){
+        $('#media25565').html('<iframe src="https://docs.google.com/document/d/1aR4sEIqPGBWxwEMfoBAugYCADlK8z9W31tYwniQsUq4/pub?embedded=true" frameborder="no" width="980" height="700"></iframe>');
+    }
+
+    if('#media25566'){
+        $('#media25566').html('<iframe src="https://docs.google.com/document/d/1xcIWX30-4tZ-0iKeJc75YfT07nKlaQf85hrwdv3ZXXA/pub?embedded=true" frameborder="no" width="980" height="700"></iframe>');
+    }
+
+    if('#media25567'){
+        $('#media25567').html('<iframe src="https://docs.google.com/document/d/1lNcbx55IJzrWAf2LHhMawsUcl-PRQu-94HcfMKlDRC8/pub?embedded=true" frameborder="no" width="980" height="700"></iframe>');
+    }
 
     setTimeout(function(){
         if(!elgg.is_logged_in()){

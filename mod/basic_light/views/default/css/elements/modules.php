@@ -109,7 +109,7 @@
     box-shadow: inset 0 1px 0 #ffffff; 
 }
 .elgg-module-featured > .elgg-body {
-	padding: 15px;
+	padding: 8px;
     
 	-webkit-border-radius: 0 0 3px 3px;
 	-moz-border-radius: 0 0 3px 3px;
